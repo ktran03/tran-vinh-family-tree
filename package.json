@@ -3,10 +3,9 @@
   "version": "0.1.0",
   "private": true,
 "scripts": {
-  "dev": "next dev",
   "build": "next build",
-  "start": "next start",
-  "export": "next export"
+  "export": "next build && next export",
+  "deploy": "npm run export && git subtree push --prefix out origin gh-pages"
 },
   "dependencies": {
     "d3": "^7.9.0",

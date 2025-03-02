@@ -5,4 +5,4 @@ const nextConfig = {
   assetPrefix: "/tran-vinh-family-tree/",
 };
 
-module.exports = nextConfig;
+export default nextConfig;

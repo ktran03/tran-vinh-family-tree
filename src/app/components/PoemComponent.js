@@ -112,7 +112,7 @@ export default function PoemComponent() {
           </div>
           
           <div className="poem-section">
-            <h3>Hán Văn</h3>
+            <h3>Hán Văn (Original)</h3>
             <pre>{poemData.han.join("\n")}</pre>
           </div>
   
@@ -122,6 +122,10 @@ export default function PoemComponent() {
             <h3>English Translation</h3>
             <pre>{poemData.english.join("\n")}</pre>
           </div>
+
+  
+
+
         </div>
       </div>
     );
