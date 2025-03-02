@@ -3,9 +3,7 @@ const nextConfig = {
   output: "export",
   basePath: "/tran-vinh-family-tree",
   assetPrefix: "/tran-vinh-family-tree/",
-  images: {
-    unoptimized: true,  // Fixes Next.js image optimization issues
-  },
+  images: { unoptimized: true },
 };
 
 export default nextConfig;
