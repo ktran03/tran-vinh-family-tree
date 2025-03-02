@@ -1,9 +1,6 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
-  basePath: "/tran-vinh-family-tree",
-  assetPrefix: "/tran-vinh-family-tree/",
-  images: { unoptimized: true },
+  output: 'export', // Ensure this is present for static export
+  distDir: 'out',   // Ensure the correct output directory
 };
 
 export default nextConfig;
