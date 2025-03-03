@@ -1,4 +1,5 @@
 import './globals.css'; // Ensure this import exists
+import ScriptLoader from "./components/ScriptLoader"; // Import the new component
 
 export default function Layout({ children }) {
   return (
@@ -6,7 +7,10 @@ export default function Layout({ children }) {
       <head>
         <link rel="stylesheet" href="/globals.css" />
       </head>
-      <body>{children}</body>
-    </html>
+      <body>
+                <ScriptLoader /> {/* Dynamically loads the script */}
+                {children}
+            </body>
+                </html>
   );
 }
