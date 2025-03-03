@@ -156,6 +156,18 @@ main {
 }
 
 .dropdown-btn {
+  color: black !important;  /* Force text color to black */
+}
+
+.dropdown a {
+  color: black !important;  /* Ensure dropdown links are also black */
+}
+
+.dropdown a:hover {
+  color: #0070f3;  /* Optional: Change color on hover (blue) */
+}
+
+.dropdown-btn {
   background: none;
   border: none;
   color: white;
@@ -179,6 +191,22 @@ main {
   border-radius: 5px;
 }
 
+/* Ensure main menu text stays white */
+.nav-links > li > a,
+.dropdown-btn {
+    color: white !important;  /* Main menu items stay white */
+}
+
+/* Ensure dropdown menu items are black */
+.dropdown-menu a {
+    color: black !important;  /* Dropdown links turn black */
+}
+
+/* Optional: Change hover color inside the dropdown */
+.dropdown-menu a:hover {
+    color: #0070f3;  /* Blue on hover, or pick any color */
+}
+
 .dropdown-menu li {
   padding: 8px 12px;
   white-space: nowrap;
@@ -192,4 +220,31 @@ main {
 
 .dropdown-menu li a:hover {
   color: #007bff;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content li {
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.dropdown-content li:hover {
+  background-color: #f0f0f0;
 }

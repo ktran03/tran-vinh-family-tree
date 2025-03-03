@@ -100,33 +100,26 @@ const poemData = {
 };
 
 export default function PoemComponent() {
-    return (
-      <div className="poem-container">
-        <h2>Hoài Niệm Gia Tổ - Tran Vinh Canh</h2>
-  
-        <div className="poem-columns">
+  return (
+    <div className="poem-container">
+      <h2 className="poem-title">Hoài Niệm Gia Tổ - Trần Vĩnh Cảnh</h2>
+
+      <div className="poem-columns">
+        <div className="poem-section">
+          <h3>Việt Ngữ</h3>
+          <pre>{poemData.vietnamese.join("\n")}</pre>
+        </div>
 
         <div className="poem-section">
-            <h3>Việt Ngữ</h3>
-            <pre>{poemData.vietnamese.join("\n")}</pre>
-          </div>
-          
-          <div className="poem-section">
-            <h3>Hán Văn (Original)</h3>
-            <pre>{poemData.han.join("\n")}</pre>
-          </div>
-  
+          <h3>Hán Văn (Original)</h3>
+          <pre>{poemData.han.join("\n")}</pre>
+        </div>
 
-  
-          <div className="poem-section">
-            <h3>English Translation</h3>
-            <pre>{poemData.english.join("\n")}</pre>
-          </div>
-
-  
-
-
+        <div className="poem-section">
+          <h3>English Translation</h3>
+          <pre>{poemData.english.join("\n")}</pre>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
+}
