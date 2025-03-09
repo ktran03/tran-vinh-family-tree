@@ -4,7 +4,7 @@ const PoemFarewell = () => {
     return (
         <main className="poem-container">
             <h1>野宅送別 居郎志</h1>
-            <h2>(Dã Trạch Tống Biệt – Cư Lang Chí)</h2>
+            <h2>(Dã Trạch Tống Biệt – Cư Lang Chí) - Tran Vinh Lai</h2>
             <h3>Farewell in the Countryside – A Man’s Aspirations in the Countryside</h3>
 
             <h2>📜 Poem (Original in Han Van)</h2>
@@ -50,7 +50,17 @@ const PoemFarewell = () => {
             </ul>
 
             <h2>📜 Modern Vietnamese Interpretation</h2>
-            <pre>
+            <pre
+                style={{
+                    fontSize: "1rem", // Adjusted for better fit
+                    lineHeight: "2",
+                    textAlign: "center",
+                    margin: "0 auto",
+                    whiteSpace: "pre-wrap", // Allows text wrapping
+                    wordBreak: "break-word", // Ensures long words don't overflow
+                    maxWidth: "70%", // Restricts width to fit screen
+                    overflowX: "hidden", // Hides horizontal scrolling
+                  }}>
                 Lời tiễn biệt trong làng quê,
                 Chí hướng của người ở lại.
                 Lòng đổi thay như trăng khuyết,
@@ -73,7 +83,17 @@ const PoemFarewell = () => {
             </pre>
 
             <h2>📜 English Interpretation</h2>
-            <pre>
+            <pre
+            style={{
+                fontSize: "1rem", // Adjusted for better fit
+                lineHeight: "2",
+                textAlign: "center",
+                margin: "0 auto",
+                whiteSpace: "pre-wrap", // Allows text wrapping
+                wordBreak: "break-word", // Ensures long words don't overflow
+                maxWidth: "70%", // Restricts width to fit screen
+                overflowX: "hidden", // Hides horizontal scrolling
+              }}>
                 A farewell in the countryside,
                 The aspirations of the one who stays.
                 Hearts change like the waning moon,

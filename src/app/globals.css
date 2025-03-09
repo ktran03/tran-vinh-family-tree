@@ -248,3 +248,42 @@ main {
 .dropdown-content li:hover {
   background-color: #f0f0f0;
 }
+
+.intro-container {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.intro-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.intro-columns {
+  display: flex;
+  justify-content: center;
+  gap: 40px; /* Space between columns */
+  max-width: 90%; /* Adjust to fit the screen */
+  margin: 0 auto; /* Center on the page */
+}
+
+.intro-section {
+  flex: 1; /* Allow each section to take equal space */
+  min-width: 45%; /* Ensure sections are wide */
+  padding: 20px;
+  border: 1px solid #ccc; /* Optional: Add a border */
+  background-color: #f0f0f0; /* Optional: Light background */
+}
+.intro-section h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.intro-section pre {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
