@@ -4,7 +4,7 @@ import { useEffect } from "react";
 const ScriptLoader = () => {
     useEffect(() => {
         const script = document.createElement("script");
-        script.src = "/js/familytree.js"; // Point to the local file
+        script.src = "/tran-vinh-family-tree/js/familytree.js"; // Point to the local file
         script.async = true;
         document.body.appendChild(script);
     }, []);

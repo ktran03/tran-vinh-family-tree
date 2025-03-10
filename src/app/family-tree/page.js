@@ -12,7 +12,7 @@ export default function FamilyTreePage() {
             <Head>
                 {/* Use absolute path for GitHub Pages */}
                 <script src="/tran-vinh-family-tree/js/familytree.js" defer></script>
-            </Head>
+                            </Head>
 
             <div className="page-container">
                 <h1 className="page-title">Trần Vĩnh Family Tree</h1>
