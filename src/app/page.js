@@ -11,7 +11,8 @@ export default function Home() {
   // Helper function to get the correct image path
   const getImagePath = (imageName) => {
     const isProd = process.env.NODE_ENV === 'production';
-    const basePath = isProd ? '/tran-vinh-family-tree' : '';
+    const isCustomDomain = process.env.NEXT_PUBLIC_CUSTOM_DOMAIN === 'true';
+    const basePath = (isProd && !isCustomDomain) ? '/tran-vinh-family-tree' : '';
     return `${basePath}/images/${imageName}`;
   };
   
