@@ -8,6 +8,13 @@ import { useLanguage } from "./contexts/LanguageContext";
 export default function Home() {
   const { t } = useLanguage();
   
+  // Helper function to get the correct image path
+  const getImagePath = (imageName) => {
+    const isProd = process.env.NODE_ENV === 'production';
+    const basePath = isProd ? '/tran-vinh-family-tree' : '';
+    return `${basePath}/images/${imageName}`;
+  };
+  
   return (
     <>
       <Header />
@@ -23,7 +30,7 @@ export default function Home() {
         {/* Enhanced Main Image */}
         <div style={{ display: "flex", justifyContent: "center", margin: "2rem 0" }}>
           <Image
-            src="/images/enhanced_main.jpeg"
+            src={getImagePath("enhanced_main.jpeg")}
             alt="Tran Vinh Family Heritage"
             width={800}
             height={600}
