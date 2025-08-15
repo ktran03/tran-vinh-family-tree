@@ -35,9 +35,9 @@ export default function FamilyTreePage() {
                 height: "calc(100vh - 80px)", 
                 marginTop: "80px",
                 overflow: "hidden" 
-            }}>
+            }} className="family-tree-container">
                 <div style={{ 
-                    padding: "15px 0 10px 0", 
+                    padding: "15px 10px 10px 10px", 
                     textAlign: "center", 
                     background: "var(--ivory)",
                     borderBottom: "2px solid var(--golden-yellow)"

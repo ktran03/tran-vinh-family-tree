@@ -571,27 +571,166 @@ img {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  /* Header adjustments for mobile */
+  .header {
+    padding: 15px 0;
+  }
+  
   .nav {
     flex-direction: column;
-    gap: 15px;
-    padding: 15px;
+    gap: 10px;
+    padding: 10px 15px;
+    align-items: stretch;
+  }
+  
+  .nav-title {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 10px;
   }
   
   .nav-links {
-    gap: 20px;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
   }
   
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .nav-links a,
+  .dropdown-btn {
+    width: 100%;
+    padding: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-size: 16px;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .dropdown {
+    width: 100%;
+  }
+  
+  .dropdown-content {
+    position: static;
+    display: none;
+    width: 100%;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+    border: none;
+    background: rgba(255,255,255,0.1);
+    border-radius: 0;
+  }
+  
+  .dropdown:hover .dropdown-content,
+  .dropdown:focus-within .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown-content a {
+    color: var(--pearl-white) !important;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    background: transparent;
+    font-size: 14px;
+    padding: 12px 15px !important;
+  }
+  
+  .dropdown-content a:hover {
+    background: rgba(255,255,255,0.1) !important;
+    color: var(--gold-accent) !important;
+  }
+  
+  /* Main content adjustments */
   main {
-    padding: 140px 15px 30px 15px;
+    padding: 180px 15px 30px 15px;
   }
   
+  /* Typography adjustments */
+  .tree-title {
+    font-size: 2.2rem !important;
+    line-height: 1.3 !important;
+  }
+  
+  h2 {
+    font-size: 1.5rem !important;
+  }
+  
+  /* Content layout adjustments */
   .poem-columns,
   .intro-columns {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .poem-container,
+  .intro-container {
+    padding: 25px 20px;
+    margin: 20px auto;
+  }
+  
+  .page-container {
+    padding: 15px;
+  }
+  
+  /* Family tree mobile adjustments */
+  .family-tree-container {
+    height: calc(100vh - 160px);
+    margin-top: 0;
+  }
+  
+  /* Image adjustments */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  /* Bio modal mobile adjustments */
+  .bio-modal-content {
+    flex-direction: column !important;
+    gap: 15px !important;
+  }
+  
+  .bio-modal-image {
+    flex: none !important;
+    max-width: 100% !important;
+    margin-bottom: 15px;
+  }
+  
+  .bio-modal-text {
+    flex: none !important;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .nav-title {
+    font-size: 20px;
   }
   
   .tree-title {
-    font-size: 2.5rem;
+    font-size: 1.8rem !important;
+  }
+  
+  h2 {
+    font-size: 1.3rem !important;
+  }
+  
+  .nav-links a,
+  .dropdown-btn {
+    font-size: 15px;
+    padding: 12px;
+  }
+  
+  main {
+    padding: 170px 10px 20px 10px;
+  }
+  
+  .poem-container,
+  .intro-container {
+    padding: 20px 15px;
+    margin: 15px auto;
   }
 }
 

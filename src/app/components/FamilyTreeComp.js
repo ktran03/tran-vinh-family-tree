@@ -339,14 +339,16 @@ const FamilyTreeComponent = () => {
                 }}>
                     <div style={{
                         background: "var(--ivory)",
-                        padding: "30px",
+                        padding: "20px",
                         borderRadius: "12px",
-                        maxWidth: selectedPerson.image ? "800px" : "500px",
-                        maxHeight: "90vh",
+                        maxWidth: selectedPerson.image ? "95vw" : "90vw",
+                        width: selectedPerson.image ? "800px" : "500px",
+                        maxHeight: "85vh",
                         overflow: "auto",
                         border: "3px solid var(--golden-yellow)",
                         boxShadow: "0 12px 36px rgba(0,0,0,0.3)",
-                        position: "relative"
+                        position: "relative",
+                        margin: "10px"
                     }}>
                         <button 
                             onClick={() => setSelectedPerson(null)}
@@ -381,13 +383,13 @@ const FamilyTreeComponent = () => {
                             {selectedPerson.name}
                         </h2>
                         
-                        <div style={{
+                        <div className="bio-modal-content" style={{
                             display: selectedPerson.image ? "flex" : "block",
                             gap: selectedPerson.image ? "20px" : "0",
                             alignItems: "flex-start"
                         }}>
                             {selectedPerson.image && (
-                                <div style={{
+                                <div className="bio-modal-image" style={{
                                     flex: "0 0 300px",
                                     textAlign: "center"
                                 }}>
@@ -409,7 +411,7 @@ const FamilyTreeComponent = () => {
                                 </div>
                             )}
                             
-                            <div style={{
+                            <div className="bio-modal-text" style={{
                                 flex: selectedPerson.image ? "1" : "auto"
                             }}>
                                 <p style={{
