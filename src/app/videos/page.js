@@ -91,7 +91,7 @@ export default function VideosPage() {
                                 fontSize: "18px",
                                 marginBottom: "10px" 
                             }}>
-                                "魚洞平明市，東海少霜風"
+&quot;魚洞平明市，東海少霜風&quot;
                             </p>
                             <p style={{ 
                                 color: "var(--warm-gray)", 
