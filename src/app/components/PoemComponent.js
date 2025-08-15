@@ -102,7 +102,7 @@ const poemData = {
 export default function PoemComponent() {
   return (
     <div className="poem-container">
-      <h2 className="poem-title">Hoài Niệm Gia Tổ - Trần Vĩnh Cảnh</h2>
+      <h2 className="poem-title">Hoài Niệm Gia Tổ</h2>
 
       <div className="poem-columns">
         <div className="poem-section">
@@ -119,6 +119,25 @@ export default function PoemComponent() {
           <h3>English Translation</h3>
           <pre>{poemData.english.join("\n")}</pre>
         </div>
+      </div>
+      
+      {/* Author Attribution */}
+      <div style={{
+        textAlign: "center",
+        marginTop: "30px",
+        padding: "15px",
+        borderTop: "1px solid var(--golden-yellow)",
+        color: "var(--warm-gray)",
+        fontFamily: "Noto Serif, serif",
+        fontSize: "14px",
+        fontStyle: "italic"
+      }}>
+        <p style={{ margin: "0" }}>
+          Cháu nội Trần Vĩnh Hoàng kính ghi
+        </p>
+        <p style={{ margin: "8px 0 0 0", fontSize: "12px", color: "var(--midnight-blue)" }}>
+          Respectfully recorded by grandson Trần Vĩnh Hoàng
+        </p>
       </div>
     </div>
   );

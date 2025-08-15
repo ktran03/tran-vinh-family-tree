@@ -1,5 +1,6 @@
-import "./globals.css"; // ✅ Ensure this import exists
-import ScriptLoader from "./components/ScriptLoader"; // ✅ Import script loader
+import "./globals.css";
+import ScriptLoader from "./components/ScriptLoader";
+import { LanguageProvider } from "./contexts/LanguageContext";
 
 export default function Layout({ children }) {
   return (
@@ -8,8 +9,10 @@ export default function Layout({ children }) {
         {/* Remove this line: <link rel="stylesheet" href="/globals.css" /> */}
       </head>
       <body>
-        <ScriptLoader /> {/* ✅ Dynamically loads the script */}
-        {children}
+        <LanguageProvider>
+          <ScriptLoader />
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );

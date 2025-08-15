@@ -1,289 +1,625 @@
-/* General Page Styling */
-/* Import Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Noto+Serif&display=swap');
+/* Confucian-Inspired Family Tree Styling */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600&display=swap');
+
+:root {
+  /* Traditional Color Palette - Based on Chinese Five Elements */
+  --imperial-red: #8B0000;        /* Fire - Respect, honor */
+  --golden-yellow: #DAA520;       /* Earth - Stability, wisdom */
+  --jade-green: #006A4E;          /* Wood - Growth, harmony */
+  --midnight-blue: #191970;       /* Water - Depth, knowledge */
+  --pearl-white: #F8F8FF;         /* Metal - Purity, virtue */
+  
+  /* Neutral tones for balance */
+  --warm-gray: #8B8680;
+  --soft-beige: #F5F5DC;
+  --ivory: #FFFFF0;
+  --charcoal: #36454F;
+  --gold-accent: #FFD700;
+}
+
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
+}
 
 body {
-  font-family: "Noto Serif", serif; /* Traditional Vietnamese-style font */
-  background-color: #f4f4f4;
-  color: #333;
+  font-family: "Noto Serif", "Times New Roman", serif;
+  background: linear-gradient(135deg, var(--pearl-white) 0%, var(--soft-beige) 100%);
+  color: var(--charcoal);
   margin: 0;
   padding: 0;
+  line-height: 1.6;
+  min-height: 100vh;
 }
 
+/* Main Content Area */
 main {
-  padding-top: 110px; /* Pushes content down to avoid header overlap */
-}
-
-/* Main Title */
-.tree-title {
-  text-align: center;
-  font-size: 32px;
-  font-weight: bold;
-  margin-top: 20px;
-  color: #2c3e50;
-}
-
-/* Main Image */
-.main-image {
-  width: 250px;
-  height: auto;
-  display: block;
-  margin: 20px auto;
-  border-radius: 10px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Poem and Tree Containers */
-.poem-container,
-.tree-container {
-  width: 100%;
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  margin-top: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Poem Columns */
-.poem-columns {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  max-width: 1200px; /* Ensure enough space */
+  padding: 120px 20px 40px 20px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
-.poem-section {
-  flex: 1;
-  min-width: 300px; /* Prevents columns from being too narrow */
-  max-width: 400px; /* Adjust to ensure text fits */
-  padding: 15px;
-  background: #ecf0f1;
-  border-radius: 5px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+/* Typography - Respectful Hierarchy */
+.tree-title {
+  font-family: "Crimson Text", serif;
+  text-align: center;
+  font-weight: 600;
+  color: var(--imperial-red);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-family: "Noto Serif", serif;
+  font-weight: 400;
+  color: var(--midnight-blue);
   text-align: center;
 }
 
-/* Family Tree */
-.tree-content {
-  max-width: 1200px;
-  width: 100%;
-  background: white;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Tree Nodes */
-.tree-node {
-  font-size: 16px;
-  padding: 5px 0;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.tree-node:hover {
-  color: #007bff;
-}
-
-/* Profile Pictures */
-.profile-pic {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #007bff;
-}
-
-/* Header Navigation Bar */
+/* Header - Dignified Navigation */
 .header {
-  background-color: #2c3e50;
-  padding: 15px;
+  background: var(--imperial-red);
+  padding: 20px 0;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
-  display: flex;
-  justify-content: center;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  border-bottom: 3px solid var(--golden-yellow);
 }
 
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  max-width: 1200px;
-  padding: 0 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 30px;
 }
 
 .nav-title {
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
+  color: var(--pearl-white);
+  font-family: "Crimson Text", serif;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.nav-title:hover {
+  color: var(--gold-accent);
+}
+
+/* Remove underline from title link */
+.nav a {
+  text-decoration: none;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 20px;
-}
-
-.nav-links li {
-  display: inline;
+  align-items: center;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
   text-decoration: none;
-  color: white;
+  color: var(--pearl-white);
   font-size: 18px;
-  transition: 0.3s;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  height: auto;
 }
 
 .nav-links a:hover {
-  color: #f1c40f;
+  background-color: rgba(255,255,255,0.2);
+  color: var(--gold-accent);
+  transform: translateY(-2px);
 }
 
-/* Dropdown Menu */
+/* Dropdown - Respectful Menu */
 .dropdown {
   position: relative;
-}
-
-.dropdown-btn {
-  color: black !important;  /* Force text color to black */
-}
-
-.dropdown a {
-  color: black !important;  /* Ensure dropdown links are also black */
-}
-
-.dropdown a:hover {
-  color: #0070f3;  /* Optional: Change color on hover (blue) */
 }
 
 .dropdown-btn {
   background: none;
   border: none;
-  color: white;
+  color: var(--pearl-white);
   font-size: 18px;
+  font-weight: 500;
   cursor: pointer;
-  padding: 5px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  height: auto;
 }
 
 .dropdown-btn:hover {
-  color: #f1c40f;
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 30px;
-  left: 0;
-  background-color: white;
-  list-style: none;
-  padding: 10px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-}
-
-/* Ensure main menu text stays white */
-.nav-links > li > a,
-.dropdown-btn {
-    color: white !important;  /* Main menu items stay white */
-}
-
-/* Ensure dropdown menu items are black */
-.dropdown-menu a {
-    color: black !important;  /* Dropdown links turn black */
-}
-
-/* Optional: Change hover color inside the dropdown */
-.dropdown-menu a:hover {
-    color: #0070f3;  /* Blue on hover, or pick any color */
-}
-
-.dropdown-menu li {
-  padding: 8px 12px;
-  white-space: nowrap;
-}
-
-.dropdown-menu li a {
-  text-decoration: none;
-  color: #2c3e50;
-  font-size: 16px;
-}
-
-.dropdown-menu li a:hover {
-  color: #007bff;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
+  background-color: rgba(255,255,255,0.2);
+  color: var(--gold-accent);
+  transform: translateY(-2px);
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: white;
-  min-width: 160px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
+  top: 100%;
+  left: 0;
+  background: var(--ivory);
+  min-width: 200px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  border-radius: 8px;
+  border: 2px solid var(--golden-yellow);
+  overflow: hidden;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
+  animation: fadeIn 0.3s ease;
 }
 
 .dropdown-content li {
-  padding: 8px 12px;
+  padding: 0;
   text-align: left;
 }
 
-.dropdown-content li:hover {
-  background-color: #f0f0f0;
+.dropdown-content a {
+  display: block;
+  padding: 12px 20px !important;
+  color: var(--charcoal) !important;
+  font-size: 16px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(218,165,32,0.2);
 }
 
-.intro-container {
-  max-width: 300px;
+.dropdown-content a:hover {
+  background: linear-gradient(90deg, var(--golden-yellow), var(--gold-accent));
+  color: var(--imperial-red) !important;
+  transform: none;
+}
+
+/* Page Container - Centered and Balanced */
+.page-container {
+  max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
 
+/* Poem Container - Scholarly Presentation */
+.poem-container {
+  background: var(--ivory);
+  padding: 40px;
+  border-radius: 12px;
+  margin: 40px auto;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  border: 1px solid var(--golden-yellow);
+  border-top: 4px solid var(--imperial-red);
+}
+
+.poem-title {
+  text-align: center;
+  color: var(--imperial-red);
+  font-family: "Crimson Text", serif;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid var(--golden-yellow);
+}
+
+.poem-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.poem-section {
+  background: var(--pearl-white);
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-left: 4px solid var(--jade-green);
+  transition: transform 0.3s ease;
+}
+
+.poem-section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.poem-section h3 {
+  color: var(--midnight-blue);
+  font-family: "Crimson Text", serif;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.poem-section pre {
+  font-family: "Noto Serif", serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--charcoal);
+  text-align: center;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+/* Intro Components - Ancestral Respect */
+.intro-container {
+  background: var(--ivory);
+  padding: 40px;
+  border-radius: 12px;
+  margin: 40px auto;
+  max-width: 1000px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  border: 1px solid var(--golden-yellow);
+  border-top: 4px solid var(--imperial-red);
+}
+
 .intro-title {
   text-align: center;
-  font-size: 2rem;
-  margin-bottom: 20px;
+  color: var(--imperial-red);
+  font-family: "Crimson Text", serif;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid var(--golden-yellow);
 }
 
 .intro-columns {
-  display: flex;
-  justify-content: center;
-  gap: 40px; /* Space between columns */
-  max-width: 90%; /* Adjust to fit the screen */
-  margin: 0 auto; /* Center on the page */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
 }
 
 .intro-section {
-  flex: 1; /* Allow each section to take equal space */
-  min-width: 45%; /* Ensure sections are wide */
-  padding: 20px;
-  border: 1px solid #ccc; /* Optional: Add a border */
-  background-color: #f0f0f0; /* Optional: Light background */
-}
-.intro-section h3 {
-  text-align: center;
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+  background: var(--pearl-white);
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-left: 4px solid var(--jade-green);
 }
 
-.intro-section pre {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  white-space: pre-wrap;
+.intro-section h3 {
+  color: var(--midnight-blue);
+  font-family: "Crimson Text", serif;
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* Family Tree Styles - Enhanced Traditional Design */
+#tree {
+  background: linear-gradient(135deg, var(--ivory) 0%, var(--pearl-white) 100%);
+  position: relative;
+}
+
+/* Traditional Pattern Overlay */
+#tree::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(218, 165, 32, 0.03) 0%, transparent 25%),
+    radial-gradient(circle at 75% 75%, rgba(139, 0, 0, 0.03) 0%, transparent 25%);
+  background-size: 100px 100px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Node Styling - Gender Differentiation */
+[data-n-id] {
+  position: relative;
+  z-index: 1;
+}
+
+/* Male Nodes */
+[data-n-id][data-gender="male"] {
+  background: linear-gradient(145deg, var(--pearl-white), #f0f8ff) !important;
+  border: 2px solid var(--midnight-blue) !important;
+  box-shadow: 0 4px 12px rgba(25, 25, 112, 0.15) !important;
+}
+
+/* Female Nodes */
+[data-n-id][data-gender="female"] {
+  background: linear-gradient(145deg, var(--pearl-white), #fff0f5) !important;
+  border: 2px solid var(--imperial-red) !important;
+  box-shadow: 0 4px 12px rgba(139, 0, 0, 0.15) !important;
+}
+
+/* Founding Ancestor - Special Styling */
+[data-n-id="1"] {
+  background: linear-gradient(145deg, var(--golden-yellow), var(--gold-accent)) !important;
+  border: 4px solid var(--imperial-red) !important;
+  box-shadow: 0 8px 24px rgba(139, 0, 0, 0.3) !important;
+  z-index: 10 !important;
+}
+
+/* Founding Ancestor Decorative Elements */
+[data-n-id="1"]::before {
+  content: '✦';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  color: var(--imperial-red);
+  font-size: 12px;
+  z-index: 11;
+}
+
+[data-n-id="1"]::after {
+  content: '✦';
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  color: var(--imperial-red);
+  font-size: 12px;
+  z-index: 11;
+}
+
+/* Key Ancestors (Generation 5-6) */
+[data-n-id="2"], [data-n-id="3"], [data-n-id="4"], [data-n-id="5"], [data-n-id="6"], [data-n-id="7"], [data-n-id="8"], [data-n-id="9"], [data-n-id="10"], [data-n-id="11"] {
+  border-width: 3px !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2) !important;
+}
+
+/* Current Generation Enhancement */
+[data-n-id^="12"], [data-n-id^="13"], [data-n-id^="14"], [data-n-id^="15"] {
+  border-width: 2px !important;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15) !important;
+}
+
+/* Photo Styling - Circular with Traditional Frames */
+[data-n-id] img {
+  border-radius: 50% !important;
+  border: 3px solid var(--golden-yellow) !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Vintage Effect for Older Generations */
+[data-n-id="1"] img, [data-n-id="2"] img, [data-n-id="3"] img, [data-n-id="4"] img, [data-n-id="5"] img, [data-n-id="6"] img, [data-n-id="7"] img, [data-n-id="8"] img, [data-n-id="9"] img, [data-n-id="10"] img, [data-n-id="11"] img {
+  filter: sepia(20%) contrast(110%) brightness(105%) !important;
+  border-color: var(--imperial-red) !important;
+}
+
+/* Hover Effects */
+[data-n-id]:hover {
+  z-index: 50 !important;
+  transition: all 0.3s ease !important;
+}
+
+[data-n-id]:hover img {
+  transform: scale(1.1) !important;
+  box-shadow: 0 6px 20px rgba(218, 165, 32, 0.4) !important;
+}
+
+/* Text Styling - Traditional Fonts */
+[data-n-id] .bft-name {
+  font-family: "Crimson Text", serif !important;
+  font-weight: 600 !important;
+  color: var(--charcoal) !important;
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.8) !important;
+}
+
+/* Connection Lines Enhancement */
+.bft-link {
+  stroke-width: 2px !important;
+  stroke: var(--jade-green) !important;
+  opacity: 0.8 !important;
+  filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.1)) !important;
+}
+
+/* Direct Lineage Lines - Thicker */
+[data-l-id*="-1-"] .bft-link, [data-l-id*="-2-"] .bft-link, [data-l-id*="-7-"] .bft-link {
+  stroke-width: 3px !important;
+  stroke: var(--imperial-red) !important;
+  opacity: 1 !important;
+}
+
+/* Spouse Connection Lines */
+[data-l-id*="partner"] .bft-link {
+  stroke: var(--golden-yellow) !important;
+  stroke-dasharray: 5,5 !important;
+  stroke-width: 2px !important;
+}
+
+/* Generation Background Layers */
+.bft-level-1 {
+  background: rgba(139, 0, 0, 0.02) !important;
+}
+
+.bft-level-2 {
+  background: rgba(25, 25, 112, 0.02) !important;
+}
+
+.bft-level-3 {
+  background: rgba(0, 106, 78, 0.02) !important;
+}
+
+.bft-level-4 {
+  background: rgba(218, 165, 32, 0.02) !important;
+}
+
+/* Scrollbar Styling */
+#tree::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+#tree::-webkit-scrollbar-track {
+  background: var(--soft-beige);
+  border-radius: 6px;
+}
+
+#tree::-webkit-scrollbar-thumb {
+  background: var(--golden-yellow);
+  border-radius: 6px;
+  border: 2px solid var(--soft-beige);
+}
+
+#tree::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-accent);
+}
+
+/* Loading Animation Enhancement */
+.bft-loading {
+  background: linear-gradient(90deg, var(--pearl-white), var(--ivory), var(--pearl-white)) !important;
+  background-size: 200% 100% !important;
+  animation: loading-shimmer 1.5s infinite !important;
+}
+
+@keyframes loading-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Traditional Corner Decorations for Special Nodes */
+[data-n-id="1"], [data-n-id="2"], [data-n-id="7"] {
+  position: relative;
+}
+
+[data-n-id="1"]::before, [data-n-id="2"]::before, [data-n-id="7"]::before {
+  content: '❋';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--imperial-red);
+  font-size: 14px;
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+}
+
+/* Generational Markers */
+.generation-marker {
+  position: absolute;
+  left: -50px;
+  top: 50%;
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+  font-family: "Crimson Text", serif;
+  font-size: 14px;
+  color: var(--warm-gray);
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+}
+
+/* Cultural Pattern Background */
+.family-tree-pattern::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(45deg, transparent 40%, rgba(218,165,32,0.01) 50%, transparent 60%),
+    linear-gradient(-45deg, transparent 40%, rgba(139,0,0,0.01) 50%, transparent 60%);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+/* Node Name Styling Based on Importance */
+[data-n-id="1"] .bft-name {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: var(--imperial-red) !important;
+  text-decoration: underline !important;
+  text-decoration-color: var(--golden-yellow) !important;
+}
+
+[data-n-id="2"], [data-n-id="7"], [data-n-id="14"], [data-n-id="15"] .bft-name {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: var(--midnight-blue) !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .bft-link {
+    stroke-width: 1.5px !important;
+  }
+}
+
+/* Image Styling - Respectful Presentation */
+img {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+  }
+  
+  .nav-links {
+    gap: 20px;
+  }
+  
+  main {
+    padding: 140px 15px 30px 15px;
+  }
+  
+  .poem-columns,
+  .intro-columns {
+    grid-template-columns: 1fr;
+  }
+  
+  .tree-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* Animation for smooth interactions */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Accessibility */
+a:focus,
+button:focus {
+  outline: 2px solid var(--golden-yellow);
+  outline-offset: 2px;
+}
+
+/* Print styles for ancestral records */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  
+  .header {
+    display: none;
+  }
+  
+  main {
+    padding: 20px;
+  }
 }
