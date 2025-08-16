@@ -7,6 +7,7 @@ import { useLanguage } from "./contexts/LanguageContext";
 
 export default function Home() {
   const { t } = useLanguage();
+  // Force GitHub Pages refresh
   
   // Helper function to get the correct image path
   const getImagePath = (imageName) => {
