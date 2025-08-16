@@ -1,28 +1,50 @@
 "use client";
 import Link from "next/link";
+import { useState } from "react";
 import { useLanguage } from "../contexts/LanguageContext";
 
 const Header = () => {
     const { language, switchLanguage, t } = useLanguage();
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    
+    const toggleMobileMenu = () => {
+        setIsMobileMenuOpen(!isMobileMenuOpen);
+    };
+    
+    const closeMobileMenu = () => {
+        setIsMobileMenuOpen(false);
+    };
     
     return (
         <header className="header">
             <nav className="nav">
-                <Link href="/">
+                <Link href="/" onClick={closeMobileMenu}>
                     <h1 className="nav-title" style={{ cursor: "pointer" }}>Trần Vĩnh Family</h1>
                 </Link>
-                <ul className="nav-links">
-                    <li><Link href="/">{t('home')}</Link></li>
-                    <li><Link href="/gia-pha-pdf">{t('giaPhaPdf')}</Link></li>
-                    <li><Link href="/family-tree">{t('familyTree')}</Link></li>
+                
+                {/* Hamburger menu button - only visible on mobile */}
+                <button 
+                    className="mobile-menu-btn"
+                    onClick={toggleMobileMenu}
+                    aria-label="Toggle navigation menu"
+                >
+                    <span className={`hamburger-line ${isMobileMenuOpen ? 'open' : ''}`}></span>
+                    <span className={`hamburger-line ${isMobileMenuOpen ? 'open' : ''}`}></span>
+                    <span className={`hamburger-line ${isMobileMenuOpen ? 'open' : ''}`}></span>
+                </button>
+                
+                <ul className={`nav-links ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
+                    <li><Link href="/" onClick={closeMobileMenu}>{t('home')}</Link></li>
+                    <li><Link href="/gia-pha-pdf" onClick={closeMobileMenu}>{t('giaPhaPdf')}</Link></li>
+                    <li><Link href="/family-tree" onClick={closeMobileMenu}>{t('familyTree')}</Link></li>
                     <li className="dropdown">
                         <button className="dropdown-btn">{t('poems')} ▼</button>
                         <ul className="dropdown-content">
-                            <li><Link href="/poem-hoai-niem">Hoài Niệm Gia Tổ</Link></li>
+                            <li><Link href="/poem-hoai-niem" onClick={closeMobileMenu}>Hoài Niệm Gia Tổ</Link></li>
                         </ul>
                     </li>
-                    <li><Link href="/videos">{t('videos')}</Link></li>
-                    <li><Link href="/contribute">{t('contribute')}</Link></li>
+                    <li><Link href="/videos" onClick={closeMobileMenu}>{t('videos')}</Link></li>
+                    <li><Link href="/contribute" onClick={closeMobileMenu}>{t('contribute')}</Link></li>
                     <li className="dropdown">
                         <button className="dropdown-btn">
                             {language === 'vi' ? '🇻🇳 VI' : '🇺🇸 EN'} ▼
@@ -30,7 +52,10 @@ const Header = () => {
                         <ul className="dropdown-content">
                             <li>
                                 <button 
-                                    onClick={() => switchLanguage('vi')}
+                                    onClick={() => {
+                                        switchLanguage('vi');
+                                        closeMobileMenu();
+                                    }}
                                     style={{
                                         background: 'none',
                                         border: 'none',
@@ -47,7 +72,10 @@ const Header = () => {
                             </li>
                             <li>
                                 <button 
-                                    onClick={() => switchLanguage('en')}
+                                    onClick={() => {
+                                        switchLanguage('en');
+                                        closeMobileMenu();
+                                    }}
                                     style={{
                                         background: 'none',
                                         border: 'none',

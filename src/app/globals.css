@@ -569,6 +569,40 @@ img {
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
+/* Mobile Menu Button - Hidden on desktop */
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburger-line {
+  width: 25px;
+  height: 3px;
+  background-color: var(--pearl-white);
+  margin: 3px 0;
+  transition: 0.3s ease;
+  transform-origin: center;
+}
+
+.hamburger-line.open:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger-line.open:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-line.open:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   /* Header adjustments for mobile */
@@ -577,22 +611,42 @@ img {
   }
   
   .nav {
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px 15px;
-    align-items: stretch;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: relative;
   }
   
   .nav-title {
-    font-size: 22px;
-    text-align: center;
-    margin-bottom: 10px;
+    font-size: 20px;
+    margin: 0;
   }
   
+  /* Show hamburger menu on mobile */
+  .mobile-menu-btn {
+    display: flex;
+  }
+  
+  /* Hide navigation links by default on mobile */
   .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--imperial-red);
     flex-direction: column;
     gap: 0;
-    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  /* Show navigation when mobile menu is open */
+  .nav-links.mobile-open {
+    max-height: 500px;
   }
   
   .nav-links li {
@@ -603,11 +657,17 @@ img {
   .nav-links a,
   .dropdown-btn {
     width: 100%;
-    padding: 15px;
+    padding: 15px 20px;
     border-bottom: 1px solid rgba(255,255,255,0.1);
     font-size: 16px;
     text-align: center;
     justify-content: center;
+    display: block;
+  }
+  
+  .nav-links li:last-child a,
+  .nav-links li:last-child .dropdown-btn {
+    border-bottom: none;
   }
   
   .dropdown {
@@ -620,7 +680,7 @@ img {
     width: 100%;
     box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
     border: none;
-    background: rgba(255,255,255,0.1);
+    background: rgba(0,0,0,0.2);
     border-radius: 0;
   }
   
@@ -634,7 +694,7 @@ img {
     border-bottom: 1px solid rgba(255,255,255,0.1);
     background: transparent;
     font-size: 14px;
-    padding: 12px 15px !important;
+    padding: 12px 20px !important;
   }
   
   .dropdown-content a:hover {
@@ -644,7 +704,7 @@ img {
   
   /* Main content adjustments */
   main {
-    padding: 180px 15px 30px 15px;
+    padding: 90px 15px 30px 15px;
   }
   
   /* Typography adjustments */
@@ -724,7 +784,7 @@ img {
   }
   
   main {
-    padding: 170px 10px 20px 10px;
+    padding: 80px 10px 20px 10px;
   }
   
   .poem-container,
